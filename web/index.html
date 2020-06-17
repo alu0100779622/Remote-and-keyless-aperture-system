@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+  </head>
+    <body>
+
+      <!-- NAVBAR -->
+      
+      <nav>
+        <div>
+          <ul>
+            <a href="#" class="brand-logo">
+              <img src="img/cerradura.png" class="filter" style="width: 30px; margin-top: 8px; margin-left: 5px">
+            </a>
+
+
+
+            <li class="logged-out" style="float:right">
+              <a href="#" class="modal-trigger" data-target="modal-login" id="login" >Entrar</a>
+            </li>
+
+            <li class="logged-out" style="float:right">
+              <a href="#" class="modal-trigger" data-target="modal-signup" id="signup" >Registrarse</a>
+            </li>
+
+            <li class="logged-in" style="float:right">
+              <a href="#" id="logout">Salir</a>
+            </li>
+
+            <li class="logged-in" style="float: right">
+              <div class="dropdown">
+                <a href="#" class="logged-in modal-trigger" data-target="modal-cerr">Añadir</a>
+              </div> 
+            </li>
+
+          </ul>
+        </div>
+      </nav>
+
+
+      
+       <iframe id="ifrm1" name="ifrm1" style="display:none"></iframe>
+
+       <div class="logged-in"style="float: right; margin: 5px 5px; color: white;"><a class="user"></a></div>
+
+      <!-- CERRADURAS -->     
+      <div class="logged-in">
+        <div class="animate slideshow-container " >
+          
+          <div class="logged-in cerraduras container" id="delete"></div>
+          
+          <div class ='nextprev'></div>
+        </div>
+        <div class ='dots' style="text-align:center"></div>
+      </div> 
+  
+
+      <div id="delete-modal" class="modal">
+        <div class="container modal-content animate">
+          <form id="">
+          <b>Borrar Cerradura</b>
+          <p>Estas seguro?</p>
+        
+          <button style="float: right; width:48%" class="abrir" onclick=" M.Modal.getInstance(document.getElementById('delete-modal')).close()">Cancelar</button>
+          <button style="float: left; width:48%" class="cerrar">Borrar</button>
+          
+          </form>
+        </div>
+      </div>
+
+
+
+      <!-- ADMIN ACTIONS -->
+      <div class="container animate logged-in"></div>
+
+        <form class="center-align admin admin-actions" style="margin: 20px auto; max-width: 300px; display: none;">
+          <div style="text-align: center; color: white;">ADMINISTRADOR</div>
+          <input type="email" placeholder="User email" id="admin-email" required />
+          <button class="abrir">Dar privilegios</button>
+        </form>
+
+      </div>
+
+
+      <!-- LOGIN -->
+
+      <div id ="modal-login" class="modal">
+        <div class="container modal-content animate">
+         
+          <form><span href="#" class="deletebtn" onclick=" M.Modal.getInstance(document.getElementById('modal-login')).close()">&times;</span>
+          <h2 style="text-align: center;">Entrar</h2></form>
+          
+          <form id="login-form">
+            <div class="input-field">
+              <b>Email</b>
+              <input type="email" placeholder="Introduce Email" id="login-email" required>
+            </div>
+
+            <div class="input-field">
+              <b>Clave</b>
+              <input type="password" placeholder="Introduce Clave" id="login-password"  required>
+            </div>
+
+            <button class="button ">Acceder</button>
+
+          </form>
+        </div>
+      </div>
+
+      <!-- SIGNUP -->
+
+      <div id ="modal-signup" class="modal">
+        <div class="container modal-content animate">
+          
+          <form><span href="#" class="deletebtn" onclick=" M.Modal.getInstance(document.getElementById('modal-signup')).close()">&times;</span>
+          <h2 style="text-align: center;">Crear Usuario</h2></form>
+
+          <form id="signup-form">
+            <div class="input-field">
+              <b>Email</b>
+              <input type="email" placeholder="Introduce Email" id="signup-email" required>
+            </div>
+
+            <div class="input-field">
+              <b>Clave</b>
+              <input type="password" placeholder="Introduce Clave" id="signup-password"  required>
+            </div>
+
+            <button class="button">Signup</button>
+
+          </form>
+        </div>
+      </div>
+
+      <!-- AÑADIR USU -->
+
+      <div id ="modal-user" class="modal">
+        <div class="container modal-content animate">
+
+          <form><span href="#" class="deletebtn" onclick=" M.Modal.getInstance(document.getElementById('modal-user')).close()">&times;</span>
+          <h2 style="text-align: center;">Añadir Usuario</h2></form>
+          
+          <form id="usu-form">
+
+            <div class="input-field">
+              <b>Email</b>
+              <input type="email" placeholder="Introduce Email" id="usuemail" required>
+            </div>
+            
+            <div class="input-field">
+              <b>Fecha entrada</b>
+              <input type="date" placeholder="Fecha inicio" id="usudatein"  required>
+            </div>
+
+            <div class="input-field">
+              <b>Fecha salida</b>
+              <input type="date" placeholder="Fecha inicio" id="usudateout"  required>
+            </div>
+
+            <b>Cerradura: </b><br>
+            <select class="elegircerradura" id="cerr" name="cerr"></select><br><br>
+
+            <label>
+              <input type="checkbox" name="admin"> <strong>Administrador</strong>
+            </label>
+
+            <button class="button">Añadir</button>
+
+          </form>
+        </div>
+      </div>
+
+      <!-- AÑADIR CERRADURA -->
+      <div id="modal-cerr" class="modal">
+        <div class="modal-content animate container">
+
+          <form><span href="#" class="deletebtn" onclick=" M.Modal.getInstance(document.getElementById('modal-cerr')).close()">&times;</span>
+          <h2 style="text-align: center;">Añadir Cerradura</h2></form>
+
+          <form id="cerr-form">
+
+            <div class="input-field">
+              <b>Nombre</b>
+              <input type="text" placeholder="Introduce Nombre" id="nombre" required>
+            </div>
+
+            <div class="input-field">
+              <b>ID</b>
+              <input type="text" placeholder="Introduce Id" id="cerrid" required></textarea>
+            </div>
+
+            <button class="button">Añadir</button>
+
+          </form>
+        </div>
+      </div>
+
+
+      <!-- The core Firebase JS SDK is always required and must be listed first -->
+      <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-auth.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-firestore.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-analytics.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-functions.js"></script>
+      <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+          apiKey: "AIzaSyB28nK8upA2zPjmdje2MoR0PGAPZvIe9qU",
+          authDomain: "aperture-e136c.firebaseapp.com",
+          databaseURL: "https://aperture-e136c.firebaseio.com",
+          projectId: "aperture-e136c",
+          storageBucket: "aperture-e136c.appspot.com",
+          messagingSenderId: "912102260950",
+          appId: "1:912102260950:web:8ac4a20b437ec598ef0977",
+          measurementId: "G-0Q22WQ0XVJ"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+        const functions = firebase.functions();
+      </script>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+      <script src="scripts/auth.js"></script>
+      <script src="scripts/index.js"></script>
+
+      <script>
+        
+        </script>
+
+    </body>
+</html>
+

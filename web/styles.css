@@ -1,0 +1,360 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #232a2f;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password], input[type=email], input[type=date]   {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  border-radius: 3px;
+  box-shadow: 0 0 0 0 rgba(19,124,189,0),0 0 0 0 rgba(19,124,189,0),inset 0 0 0 1px rgba(16,22,26,.15),inset 0 1px 1px rgba(16,22,26,.2);
+  background: rgba(16,22,26,.3);
+  color: #f5f8fa;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+select{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  border-radius: 3px;
+  box-shadow: 0 0 0 0 rgba(19,124,189,0),0 0 0 0 rgba(19,124,189,0),inset 0 0 0 1px rgba(16,22,26,.15),inset 0 1px 1px rgba(16,22,26,.2);
+  background: rgba(16,22,26,.3);
+  color: #f5f8fa;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+
+/* Set a style for all buttons */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.cerrar {  
+  background-color: #f44336;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 18px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+.abrir{
+  background-color: #4CAF50;
+  color: white;
+
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 18px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  
+}
+
+.button {
+display: inline-flex;
+flex-direction: row;
+align-items: center;
+justify-content: center;
+border: none;
+border-radius: 3px;
+cursor: pointer;
+padding: 5px 10px;
+vertical-align: middle;
+text-align: left;
+font-size: 14px;
+min-width: 30px;
+min-height: 30px;
+
+
+box-shadow: 0 0 0 1px rgba(16,22,26,.4);
+background-color: #394b59;
+background-image: linear-gradient(180deg,hsla(0,0%,100%,.05),hsla(0,0%,100%,0));
+color: #f5f8fa;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+
+.filter{
+  filter: invert(90%);
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; /* Enable scroll if needed */
+  background-color: #232a2f;
+  outline: none;
+}
+/* Modal Content/Box */
+.modal-content {
+  background-color: #f5f8fa;
+  margin: 10% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  width: 80%; /* Could be more or less, depending on screen size */
+  
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  border-radius: 6px;
+  background: #293742;
+  color: #f5f8fa;
+  max-width: 400px;
+}
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 6px;
+  background-color: #293742;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+li {
+  float: left;
+}
+li:last-child {
+  border-right: none;
+}
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+li a:hover:not(.active) {
+  background-color: #111;
+}
+li a:hover, .dropdown:hover .dropbtn {
+  background-color: #111;
+}
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #293742;
+  min-width: 120px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.violet{
+  color: blueviolet;
+}
+
+.cerraduras{
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  margin: 100px auto 20px auto;
+  max-width: 250px; display: none;
+  border-radius: 6px;
+  background-color: #293742;
+}
+
+.infobtn {
+  color: white;
+  float: left;
+  font-size: 32px;
+  line-height: 20px;
+  cursor: pointer;
+}
+.infobtn:hover{
+  color: #4CAF50;
+}
+
+
+.deletebtn {
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 32px;
+  line-height: 20px;
+  cursor: pointer;
+}
+.deletebtn:hover {
+  color: #f44336;
+}
+
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+
+}
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  font-size: 15px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  top: 150%;
+  left: 50%;
+  margin-left: -60px;
+
+  opacity: 0;
+  transition: opacity 1s;
+}
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent black transparent;
+}
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 500px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 10px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 3px 3px 3px 3px;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 3px 3px 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  
+  background-color: rgba(16,22,26,0.8);
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 10px;
+  width: 10px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+  background: rgba(16,22,26);
+
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}}
